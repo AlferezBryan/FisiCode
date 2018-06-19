@@ -1,6 +1,47 @@
-<div class="container">
+<mat-sidenav-container class="sidenav-container" style="background-color: #1000">
+  <mat-sidenav #drawer class="sidenav">
+    <mat-toolbar color="primary">
+      
+      </mat-toolbar>
+    <mat-nav-list><br><br><br>
+      <a mat-list-item href="home-page">
+        <mat-icon>home</mat-icon>&nbsp;&nbsp;
+        <span>Home</span>
+      </a>
+      <a mat-list-item href="profile-user">
+        <mat-icon>account_circle</mat-icon>&nbsp;&nbsp;
+        <span>Mi perfil</span>
+      </a>
+      <a mat-list-item href="list-questions">
+        <mat-icon>list</mat-icon>&nbsp;&nbsp;
+        <span>Lista de Preguntas</span>
+      </a>
+      <a mat-list-item href="add-question">
+        <mat-icon>add_circle</mat-icon>&nbsp;&nbsp;
+        <span>Añadir pregunta</span>
+      </a>
+      <a mat-list-item href="">
+        <mat-icon>exit_to_app</mat-icon>&nbsp;&nbsp;
+        <span>Salir</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu
+        </mat-icon>
+      </button>&nbsp;&nbsp;
+      <span class="spacer"></span>
+      <span>FisiCode_</span>
+      <span class="spacer"></span>
+    </mat-toolbar>
+<!--    <div style="background-color: #3f51b5" align="center"><br><br>
+      <img class="card-img-top" src="../assets/img/Logo.png" class="img-fluid" alt="Responsive image" style="width: 50%; "> 
+    </div>-->
+    <div class="container"><br><br>
   <div class="row">
-    <div class="col-sm-8 offset-sm-2 text-center">
+    <div class="col-sm-8 offset-sm-2 text-center" style="background: url(../assets/img/background.jpg);background-size: 100%">
       <div class="example-container"><br>
         <div class="card" align=center>
           <br>

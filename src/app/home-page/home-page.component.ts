@@ -73,8 +73,8 @@ export class HomePageComponent implements OnInit {
     );
   }
 
-  goFisiPage() {
-    window.location.href = 'http://sistemas.unmsm.edu.pe/';
+  goAddQuestion() {
+    this.router.navigate(['add-question']);
   }
 
 }

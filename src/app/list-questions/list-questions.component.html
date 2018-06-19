@@ -59,20 +59,19 @@
               </button>
             </mat-menu>
           </mat-toolbar-row>
-      </mat-toolbar><br><br>
-      <div class="container">
-          <div class="row">
-            <div class="col-sm-8 offset-sm-2 text-center"><br>
+      </mat-toolbar>
+      <div class="container"><br><br>
+          <div class="row" align="center">
+            <div class="col-sm-10 offset-sm-1 text-center" style="background: url(../assets/img/background.png);background-size: 100%"><br>
+              <br>
               <p>Filtro por curso</p>
-              <mat-form-field>
+              <mat-form-field style="width: 80%">
                   <mat-select placeholder="Seleccione un curso" name="tag">
                     <mat-option *ngFor="let tag of tags" [value]="tag.id" (click)="selectTag(tag)">
                       {{ tag.name }}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
-            </div>
-            <div class="col-sm-10 offset-sm-1 text-center"><br>
               <span *ngFor="let item of dataExample">
                 <mat-card class="example-card">
                   <mat-card-header>

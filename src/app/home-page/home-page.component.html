@@ -37,29 +37,26 @@
       <span class="spacer"></span>
       <span>FisiCode_</span>
       <span class="spacer"></span>
+      <span></span>
     </mat-toolbar>
-    <!--<ng-content>
-    </ng-content>-->
+<!--    <div style="background-color: #3f51b5" align="center"><br><br>
+      <img class="card-img-top" src="../assets/img/Logo.png" class="img-fluid" alt="Responsive image" style="width: 50%; "> 
+    </div>-->
     <div class="container"><br><br>
-<!--      <div style="background-color: red">
-        <img class="card-img-top" src="../assets/img/Logo.png" class="img-fluid" alt="Responsive image" style="width: 75%; height: 75%"> 
-      </div>-->
+      
       <div class="row">
-        <div class="col-sm-12 text-center">
+        <div class="col-sm-12 text-center" style="background: url(../assets/img/background.png);background-size: 100%">
           <div class="row">
             <div class="col-sm-9">
-              <div class="image-container" style="cursor: pointer;" (click)="goFisiPage()">
-                <img class="card-img-top" src="http://unmsm.edu.pe/noticias/templates/noticias2015/octubre/d23/portada_fisi.jpg" class="img-fluid" alt="Responsive image" style="width:100%">
-                <div class="centered-text">
-                  <h4>ENTRA Y CONOCE LA FISI</h4>
-                </div>
+              <div class="image-container">
+                <img class="card-img-top" src="../assets/img/Logo.png" class="img-fluid" alt="Responsive image" style="width:100%">
               </div>
               <div class="row">
                 <div class="col-sm-12 text-center">
                   <div class="row">
                     <div class="col-sm-4">
                       <br>
-                      <div class="card" align=center>
+                      <div class="card" align=center >
                         <br><p>Hola <span style="font-weight: bold">{{ firstName }} {{ lastName }}</span>!!!</p>
                         <img mat-card-image src="{{imagePerson}}" alt="image person" style="width: 50%; height: 50%">
                         <p>Tienes {{numQuestions}} preguntas realizadas</p>
@@ -68,11 +65,12 @@
                     </div>
                     <div class="col-sm-8">
                       <br>
-                      <div class="card" align=center >
-                        <br><h5>Temas más populares</h5>
+                      <div class="card" align=center style="cursor: pointer; " (click)="goListQuestions()">
+                        <br><h5>Preguntas recientes</h5>
+                        <!--<mat-list role="list">-->
                         <mat-chip-list class="mat-chip-list-stacked">
-                          <mat-chip *ngFor="let chip of tags" selected="true" [color]="blue" style="background-color: #FFC107;color: black; width: 50%;border-radius: 7.5px">
-                            {{chip.name}}
+                          <mat-chip *ngFor="let question of listQuestions" selected="true" [color]="blue"  style="width: 80%; cursor: pointer;border-radius: 7.5px" (click)="goListQuestions()">
+                            {{ question.title }}
                           </mat-chip><br>
                         </mat-chip-list>
                       </div>
@@ -83,12 +81,19 @@
             </div>
             <div class="col-sm-3">
               <br>
-              <div class="card" align=center style="cursor: pointer; " (click)="goListQuestions()">
-                <br><h5>Preguntas recientes</h5>
-                <!--<mat-list role="list">-->
+              <div class="card" align=center >
+                <br><h5>Realiza tu pregunta</h5>
+                <mat-card-actions>
+                  <button mat-button (click)="goAddQuestion()"><mat-icon>add_circle</mat-icon></button>
+                </mat-card-actions>
+                <br>
+              </div>
+              <br>
+              <div class="card" align=center >
+                <br><h5>Temas más populares</h5>
                 <mat-chip-list class="mat-chip-list-stacked">
-                  <mat-chip *ngFor="let question of listQuestions" selected="true" [color]="blue"  style="width: 80%; cursor: pointer;border-radius: 7.5px" (click)="goListQuestions()">
-                      {{ question.title }}
+                    <mat-chip *ngFor="let chip of tags" selected="true" [color]="blue" style="background-color: #FFC107;color: black; width: 80%;border-radius: 7.5px">
+                          {{chip.name}}
                   </mat-chip><br>
                 </mat-chip-list>
 <!--                <mat-list-item role="listitem" *ngFor="let question of listQuestions">
@@ -96,8 +101,8 @@
                   </mat-list-item>
                 </mat-list>-->
               </div><br>
-            </div>­­­ ­­­
-          </div>
+            </div>­­­ ­<br>
+     ­     </div>
 
 
 

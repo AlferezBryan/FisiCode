@@ -14,6 +14,9 @@ import { map, startWith } from 'rxjs/operators';
 export class AddQuestionComponent implements OnInit {
 
   title: any;
+  imagePerson: any;
+  username: any;
+  dataPerson: any;
   description: any;
   listTags: any[];
   tags: FormControl;
@@ -29,6 +32,7 @@ export class AddQuestionComponent implements OnInit {
     private snackBar: MatSnackBar,
     private router: Router
   ) {
+    this.obtainImageNamePerson();
     this.title = new FormControl('', [Validators.required]);
     this.description = new FormControl('', [Validators.required]);
     this.tags = new FormControl();
@@ -39,6 +43,20 @@ export class AddQuestionComponent implements OnInit {
     this.openedImage = false;
     this.canSaveImage = false;
     this.listAllTags();
+  }
+
+  obtainImageNamePerson() {
+    this.dataService.getUserData(localStorage.getItem('person_id')).subscribe(
+      response => {
+        this.dataPerson = response.json();
+        this.username = this.dataPerson.user.username;
+        if (this.dataPerson.person_image === 'Sin imagen') {
+          this.imagePerson = 'http://alarishealth.com/wp-content/uploads/2014/06/no-user.png';
+        } else {
+          this.imagePerson = 'http://' + this.dataPerson.person_image;
+        }
+      }
+    );
   }
 
   getErrorMessageTitle() {
