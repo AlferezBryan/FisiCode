@@ -77,4 +77,8 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(['add-question']);
   }
 
+  goProfileUser() {
+    this.router.navigate(['profile-user']);
+  }
+
 }

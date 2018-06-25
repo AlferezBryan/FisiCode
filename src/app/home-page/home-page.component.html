@@ -52,13 +52,13 @@
 									<br>
 									<div class="card" align=center >
 										<br><p>Hola <span style="font-weight: bold">{{ firstName }} {{ lastName }}</span>!!!</p>
-										<img mat-card-image src="{{imagePerson}}" alt="image person" style="width: 50%; height: 50%">
+										<img mat-card-image src="{{imagePerson}}" alt="image person" style="width: 75%; height: 75%;cursor: pointer;" (click)="goProfileUser()" >
 										<p>Tienes {{numQuestions}} preguntas realizadas</p>
 									</div>
 								</div>
 								<div class="col-sm-8">
 									<br>
-									<div class="card" align=center style="cursor: pointer; " (click)="goListQuestions()">
+									<div class="card" align=center style="cursor: pointer;" (click)="goListQuestions()">
 										<br><h5>Preguntas recientes</h5>
 										<mat-chip-list class="mat-chip-list-stacked">
 											<mat-chip *ngFor="let question of listQuestions" selected="true" [color]="blue"  style="width: 80%; cursor: pointer;border-radius: 7.5px" (click)="goListQuestions()">
